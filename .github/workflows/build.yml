@@ -21,4 +21,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: library-release.aar
-        path: SelectableTextHelper/library/build/output/aar/library-release.aar
+        path: library/build/output/aar/library-release.aar

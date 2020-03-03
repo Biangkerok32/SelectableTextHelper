@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2
@@ -16,9 +16,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
-    - name: 'Upload Companion to Artifacts'
+      run: ./gradlew aR
+    - name: 'AAR to Artifacts'
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: AppyBuilder Gold
-        path: appinventor/build/buildserver/AppyBuilder Gold.apk
+        name: ${{ steps.build_aix.outputs.file }}
+        path: /library/build/aar/${{ steps.build_aix.outputs.file }}

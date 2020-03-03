@@ -16,9 +16,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew aR
+      run: ./gradlew build
     - name: 'Upload AAR to Artifacts'
       uses: actions/upload-artifact@v1.0.0
       with:
         name: library-release.aar
-        path: library/build/output/aar/library-release.aar
+        path: /library/build/output/aar/library-release.aar

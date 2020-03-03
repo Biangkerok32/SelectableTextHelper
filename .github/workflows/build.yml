@@ -17,8 +17,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew aR
-    - name: 'AAR to Artifacts'
+    - name: 'Upload AAR to Artifacts'
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: ${{ steps.build_aix.outputs.file }}
-        path: SelectableTextHelper/library/build/output/aar/${{ steps.build_aix.outputs.file }}
+        name: library-release.aar
+        path: SelectableTextHelper/library/build/output/aar/library-release.aar
